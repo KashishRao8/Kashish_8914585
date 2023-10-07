@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Setting up the webdriver
-driver = webdriver.Chrome()
+driver = webdriver.Edge()
 
 # Navigating to the Amazon.ca homepage
 driver.get("https://www.amazon.ca")
@@ -28,7 +28,7 @@ time.sleep(5)
 assert "laptop" in driver.title
 
 # Selecting a laptop from the search results
-laptop_link = driver.find_element("xpath","/html/body/div[1]/div[2]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div/div[1]/span/a/div/img")
+laptop_link = driver.find_element("xpath","/html/body/div[1]/div[1]/div[1]/div[1]/div/span[1]/div[1]/div[4]/div/div/div/div/div/div/div[2]/div[1]/h2/a")
 # laptop_link = driver.find_element("By.CSS_SELECTOR","span[data-component-type='s-product-image'] a")
 laptop_link.click()
 
@@ -45,11 +45,11 @@ add_to_cart_button.click()
 time.sleep(5)
 
 # Clicking on no thanks button
-no_thanks_button= driver.find_element("xpath","/html/body/div[9]/div[3]/div[1]/div/div/div[2]/div[2]/div/div/div[3]/div/span[2]/span/input")
+no_thanks_button= driver.find_element("xpath","/html/body/div[8]/div[3]/div[1]/div/div/div[2]/div[2]/div/div/div[3]/div/span[2]/span/input")
 no_thanks_button.click()
 time.sleep(2)
 
-proceed_to_checkout= driver.find_element("xpath","/html/body/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div/div[1]/form/span/span/span/input")
+proceed_to_checkout= driver.find_element("xpath","/html/body/div[1]/div[1]/div/div[1]/div[2]/div/div[3]/div/div[1]/form/span/span/span/input")
 proceed_to_checkout.click()
 time.sleep(2)
 
